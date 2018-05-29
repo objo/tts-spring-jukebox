@@ -1,0 +1,16 @@
+<h1>Song List</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Duration</th>
+  </tr>
+
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song[0] %></td>
+      <td><%= duration_as_minutes_and_seconds(song[1]) %></td>
+    </tr>
+  <% end %>
+
+</table>
