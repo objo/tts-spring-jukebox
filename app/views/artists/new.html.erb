@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Create an Artist</h1>
 
 <%= form_for @artist do |form|  %>
@@ -11,3 +12,10 @@
 
   <%= form.submit "Create" %>
 <% end %>
+=======
+<h1>New Artist</h1>
+
+<%= render 'form', artist: @artist %>
+
+<%= link_to 'Back', artists_path %>
+>>>>>>> 645cf44b295b09d5df984c88d94f52e5661027b3
