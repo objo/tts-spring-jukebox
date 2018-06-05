@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  before_action :collect_artists, only: [:new, :create, :edit, :update]
 
   def index
     @songs = Song.all
@@ -47,7 +48,11 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:name, :duration)
+    params.require(:song).permit(:name, :duration, :artist_id)
+  end
+
+  def collect_artists
+    @artists_arrays = Artist.all.map { |a| [a.name, a.id] }
   end
 
 end
